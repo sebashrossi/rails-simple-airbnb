@@ -1,0 +1,22 @@
+<div class="container">
+  <h1 class="header">All Our Flats (<%= @flats.all.count %>)</h1>
+  <div class="row">
+    <% @flats.each do |flat| %>
+    <div class="col-4">
+      <div class="card-trip">
+        <img src="https://source.unsplash.com/featured/?space" />
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= flat.name %></h2>
+            <p><%= flat.address %></p>
+            <h2><%= flat.number_of_guests %> guest/s</h2>
+            <%= link_to 'More info...', flat_path(flat) %>
+          </div>
+          <h3 class="card-trip-pricing"><%= flat.price_per_night %>€</h3>
+          <img src="https://kitt.lewagon.com/placeholder/users/sebashrossi" class="card-trip-user avatar-bordered" />
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

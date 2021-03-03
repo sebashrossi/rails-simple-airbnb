@@ -1,0 +1,55 @@
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/featured/?space)"></div>
+<div class="container-show">
+  <div class="row">
+    <div class="col-8">
+      <div class="card">
+        <h1><%= @flat.name %></h1>
+        <p><%= @flat.address %></p>
+      </div>
+      <div class="card">
+        <h2>More about this flat...</h2>
+        <p><%= @flat.description %></p>
+      </div>
+      <div class="card">
+          <h2>Details</h2>
+        <div class="flex">
+          <div class="flex">
+            <i class="fas fa-euro-sign mr-2"></i>
+            <span><p><%= @flat.price_per_night %></p></span>
+          </div>
+          <div class="flex ml-3">
+            <i class="fas fa-user-friends mr-2"></i>
+            <span><p><%= @flat.number_of_guests %></p></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card">
+        <h5>Book this place!</h5>
+        <form action>
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">From:</span>
+            <input type="text" class="form-control" placeholder="03/03/2021">
+          </div>
+          <div class="input-group mt-2">
+            <span class="input-group-addon" id="basic-addon1">To:</span>
+            <input type="text" class="form-control" placeholder="15/03/2021">
+          </div>
+          <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%">
+        </form>
+      </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="buttons">
+          <%= link_to edit_flat_path(@flat), class: 'btn btn-outline-success' do %>
+              <i class="far fa-edit"></i> Edit
+            <% end %>
+          <%= link_to flat_path(@flat), method: :delete, class: 'btn btn-outline-danger' do %>
+              <i class="far fa-trash-alt"></i> Delete
+            <% end %>
+          </div>
+          </div>
+        </div>
+  </div>
+</div>

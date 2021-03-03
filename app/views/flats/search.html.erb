@@ -1,0 +1,22 @@
+<div class="container">
+  <h1 class="header">Search results for '<%= params[:search] %>' (<%= @results.all.count %>)</h1>
+  <div class="row">
+    <% @results.each do |result| %>
+    <div class="col-4">
+      <div class="card-trip">
+        <img src="https://source.unsplash.com/featured/?space" />
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= result.name %></h2>
+            <p><%= result.address %></p>
+            <h2><%= result.number_of_guests %> guest/s</h2>
+            <%= link_to 'More info...', flat_path(result) %>
+          </div>
+          <h3 class="card-trip-pricing"><%= result.price_per_night %>€</h3>
+          <img src="https://kitt.lewagon.com/placeholder/users/sebashrossi" class="card-trip-user avatar-bordered" />
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
